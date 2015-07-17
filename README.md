@@ -8,33 +8,41 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 # 使用方法
 
-(1)プロジェクトのソースコードにSceneCaptureActorを追加
+(1) プロジェクトのソースコードにSceneCaptureActorを追加
 
-(2)SceneCaptureActor.hのMYPROJECT2_APIをプロジェクトに応じて書き換え
+(2) SceneCaptureActor.hのMYPROJECT2_APIをプロジェクトに応じて書き換え
 
-(3)SceneCaptureActor.cppとrgbe.cppの
-   #include "MyProject2.h"
-   をプロジェクトに応じて書き換え
+(3) SceneCaptureActor.cppとrgbe.cppの
+    #include "MyProject2.h"
+    をプロジェクトに応じて書き換え
 
-(4)コンパイル
-
-
-(5)全てのクラス -> SceneCapture2Dを配置
-
-(6)新規追加 -> マテリアル -> 描画ターゲット(SceneRenderTarget)を追加
-
-(7)SceneCapture2DのTextureTargetにSceneRenderTargetをアタッチ
+(4) コンパイル
 
 
-(8)SceneCaptureActorをシーンに配置
 
-(9)SceneCaptureActorのrender_texにSceneRenderTargetをアタッチ
+(5) 全てのクラス -> SceneCapture2Dを配置
 
-(10)SceneCaptureActorのpathに書き出し先のパスを設定
+(6) 新規追加 -> マテリアル -> 描画ターゲット(SceneRenderTarget)を追加
+
+(7) SceneCapture2DのTextureTargetにSceneRenderTargetをアタッチ
+
+
+
+(8) SceneCaptureActorをシーンに配置
+
+(9) SceneCaptureActorのrender_texにSceneRenderTargetをアタッチ (Setting/SceneCaptureActorSetting.pngを参照)
+
+(10) SceneCaptureActorのpathに書き出し先のパスを設定
 
 # 書き出しファイル
 
 .hdrファイルの連番になります。
+
+書き出したファイルのサンプルはsampleディレクトリにあります。
+
+# 制約
+
+SceneRenderTargetのサイズは2の乗数かつ正方形である必要があります。
 
 #依存ライブラリ
 
