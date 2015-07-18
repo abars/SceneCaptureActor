@@ -32,9 +32,9 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 (9) SceneCaptureActorのrender_texにSceneRenderTargetをアタッチ
 
-![Setting/SceneCaptureActorSetting.pngを参照](https://github.com/abars/SceneCaptureActor/blob/master/setting/SceneCaptureActorSetting.png)
-
 (10) SceneCaptureActorのpathに書き出し先のパスを設定
+
+![SceneCaptureActor setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SceneCaptureActorSetting.png)
 
 # 書き出しファイル
 
@@ -48,11 +48,15 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 (1) 新規追加 -> マテリアル -> マテリアル(SceneDepth)を追加
 
-(2) SceneDepthをダブルクリック、Material DomainをPost Processに設定、SceneDepth UVsを適当な定数で割ってエミッションカラーに接続 (Setting/SceneDepthMaterial.pngを参照)
+(2) SceneDepthをダブルクリック、Material DomainをPost Processに設定、SceneDepth UVsを適当な定数で割ってエミッションカラーに接続
+
+![SceneDepth setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SceneDepthMaterial.png)
 
 (3) Scene Capture 2DのMiscのBlendablesにSceneDepthを設定 (Setting/SetDepthPostEffect.pngを参照)
 
 (4) Scene Capture 2DのCapture SourceをFinal Color (LDR with Post Process)に設定
+
+![PostProcess setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SetDepthPostEffect.png)
 
 # 制約
 
