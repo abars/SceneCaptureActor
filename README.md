@@ -52,7 +52,7 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 ![SceneDepth setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SceneDepthMaterial.png)
 
-(3) Scene Capture 2DのMiscのBlendablesにSceneDepthを設定 (Setting/SetDepthPostEffect.pngを参照)
+(3) Scene Capture 2DのMiscのBlendablesにSceneDepthを設定
 
 (4) Scene Capture 2DのCapture SourceをFinal Color (LDR with Post Process)に設定
 
