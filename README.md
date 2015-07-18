@@ -30,7 +30,9 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 (8) SceneCaptureActorをシーンに配置
 
-(9) SceneCaptureActorのrender_texにSceneRenderTargetをアタッチ (Setting/SceneCaptureActorSetting.pngを参照)
+(9) SceneCaptureActorのrender_texにSceneRenderTargetをアタッチ
+
+![Setting/SceneCaptureActorSetting.pngを参照](https://github.com/abars/SceneCaptureActor/blob/master/setting/SceneCaptureActorSetting.png)
 
 (10) SceneCaptureActorのpathに書き出し先のパスを設定
 
@@ -39,6 +41,18 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 .hdrファイルの連番になります。
 
 書き出したファイルのサンプルはsampleディレクトリにあります。
+
+# 深度値の書き出し
+
+深度値を書き出したい場合、Post Process MaterialをSceneCapture2Dに適用します。
+
+(1) 新規追加 -> マテリアル -> マテリアル(SceneDepth)を追加
+
+(2) SceneDepthをダブルクリック、Material DomainをPost Processに設定、SceneDepth UVsを適当な定数で割ってエミッションカラーに接続 (Setting/SceneDepthMaterial.pngを参照)
+
+(3) Scene Capture 2DのMiscのBlendablesにSceneDepthを設定 (Setting/SetDepthPostEffect.pngを参照)
+
+(4) Scene Capture 2DのCapture SourceをFinal Color (LDR with Post Process)に設定
 
 # 制約
 
