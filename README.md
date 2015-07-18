@@ -1,5 +1,5 @@
 # SceneCaptureActor
-Export HDR movie from Scene Capture 2D of Unreal Engine 4
+Export HDR movie from Scene Capture 2D on Unreal Engine 4
 
 # 概要
 
