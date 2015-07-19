@@ -58,6 +58,18 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 ![PostProcess setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SetDepthPostEffect.png)
 
+# 固定フレームレートでの書き出し
+
+Unreal Engineは、BENCHMARKオプションを付けて実行することで、フレームレートを固定することができます。
+
+"UE4Editor.exe" "(.uprojectのフルパス)" -ResX=1920 -ResY=1080 -FPS=60 -BENCHMARK -game
+
+BENCHMARKオプションの詳細は以下にあります。
+
+"BENCHMARK: Run game at fixed-step in order to process each frame without skipping any frames. This is useful in conjunction with DUMPMOVIE options."
+
+https://docs.unrealengine.com/latest/INT/Programming/Basics/CommandLineArguments/index.html
+
 # 制約
 
 SceneRenderTargetのサイズは2の乗数かつ正方形である必要があります。
