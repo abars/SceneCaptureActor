@@ -32,6 +32,11 @@ void ASceneCaptureActor::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
 
+	//録画をポーズする
+	if(pause){
+		return;
+	}
+
 	//RenderTextureからUTexture2Dを生成
 	//テクスチャサイズは2の乗数かつ正方形である必要がある
 	UTexture2D* Aux2DTex = render_tex->ConstructTexture2D(this, "new_texture_name", EObjectFlags::RF_NoFlags, CTF_DeferCompression);
@@ -58,9 +63,15 @@ void ASceneCaptureActor::Tick( float DeltaTime )
 
 		FFloat16Color c = FormatedImageData[i];
 
-		for_rgbe[i * 3 + 0] = c.R.GetFloat();
-		for_rgbe[i * 3 + 1] = c.G.GetFloat();
-		for_rgbe[i * 3 + 2] = c.B.GetFloat();
+		if(capture_alpha){
+			for_rgbe[i * 3 + 0] = c.A.GetFloat();
+			for_rgbe[i * 3 + 1] = c.A.GetFloat();
+			for_rgbe[i * 3 + 2] = c.A.GetFloat();
+		}else{
+			for_rgbe[i * 3 + 0] = c.R.GetFloat();
+			for_rgbe[i * 3 + 1] = c.G.GetFloat();
+			for_rgbe[i * 3 + 2] = c.B.GetFloat();
+		}
 	}
 
 	//.hdr出力

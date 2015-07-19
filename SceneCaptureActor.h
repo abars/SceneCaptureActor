@@ -14,11 +14,21 @@ public:
 	// Sets default values for this actor's properties
 	ASceneCaptureActor();
 
+	/* 録画対象となるSceneCapture2Dから書き出したRenderTargetを接続します */
 	UPROPERTY(EditAnywhere)
 	UTextureRenderTarget2D *render_tex;
 
+	/* .hdrファイルの書き出し先のパスを設定します、書き出し先はpath%08d.hdrとなります */
 	UPROPERTY(EditAnywhere)
 	FString path;
+
+	/* 一時的に録画を止める場合はtrueに設定します */
+	UPROPERTY(EditAnywhere)
+	bool pause=false;
+
+	/* RGBではなくアルファチャンネルをキャプチャして書き出す場合はtrueに設定します */
+	UPROPERTY(EditAnywhere)
+	bool capture_alpha=false;
 
 	int frame = 0;
 
