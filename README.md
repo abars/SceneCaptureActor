@@ -56,7 +56,15 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 (4) Scene Capture 2DのCapture SourceをFinal Color (LDR with Post Process)に設定
 
-![PostProcess setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SetDepthPostEffect.png)
+![PostProcess Depth setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SetDepthPostEffect.png)
+
+# 法線の書き出し
+
+法線を書き出したい場合も、深度値と同様に、Post Process Materialを使用します。
+
+Material EditorでSceneTexture:World Normalをエミッションカラーに接続して下さい。
+
+![PostProcess Normal setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SetNormalPostEffect.png)
 
 # 固定フレームレートでの書き出し
 
