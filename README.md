@@ -48,7 +48,7 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 (1) 新規追加 -> マテリアル -> マテリアル(SceneDepth)を追加
 
-(2) SceneDepthをダブルクリック、Material DomainをPost Processに設定、SceneDepth UVsを適当な定数で割ってエミッションカラーに接続
+(2) SceneDepthをダブルクリック、Material DomainをPost Processに設定、SceneDepth UVsを適当な定数で割ってエミッシブカラーに接続
 
 ![SceneDepth setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SceneDepthMaterial.png)
 
@@ -62,7 +62,7 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 法線を書き出したい場合も、深度値と同様に、Post Process Materialを使用します。
 
-Material EditorでSceneTexture:World Normalをエミッションカラーに接続して下さい。
+Material EditorでSceneTexture:World Normalをエミッシブカラーに接続して下さい。
 
 ![PostProcess Normal setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SetNormalPostEffect.png)
 
@@ -81,6 +81,8 @@ https://docs.unrealengine.com/latest/INT/Programming/Basics/CommandLineArguments
 # 制約
 
 SceneRenderTargetのサイズは2の乗数かつ正方形である必要があります。
+
+また、Unreal Engineの制約から、出力の最大サイズは2048x2048となります。
 
 #依存ライブラリ
 
