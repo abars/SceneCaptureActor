@@ -70,7 +70,7 @@ Material EditorでSceneTexture:World Normalをエミッシブカラーに接続�
 
 Unreal Engineは、BENCHMARKオプションを付けて実行することで、フレームレートを固定することができます。
 
-"UE4Editor.exe" "(.uprojectのフルパス)" -ResX=1920 -ResY=1080 -FPS=60 -BENCHMARK -game
+"UE4Editor.exe" "(.uprojectのフルパス)" -ResX=1920 -ResY=1080 -FPS=60 -BENCHMARK
 
 BENCHMARKオプションの詳細は以下にあります。
 
@@ -78,11 +78,27 @@ BENCHMARKオプションの詳細は以下にあります。
 
 https://docs.unrealengine.com/latest/INT/Programming/Basics/CommandLineArguments/index.html
 
-# 制約
+また、フレームレートの固定は、C++ファイルのBeginPlayで以下のように記述しても行うことができます。
+
+FApp::SetBenchmarking(true);
+
+FApp::SetFixedDeltaTime(1/60);
+
+# 解像度制約
 
 SceneRenderTargetのサイズは2の乗数かつ正方形である必要があります。
 
 また、Unreal Engineの制約から、出力の最大サイズは2048x2048となります。
+
+crop_left , crop_right , crop_top , crop_bottomをpublic変数に追加するかどうか検討中です。
+
+# キューブマップの書き出しについて
+
+UTextureCubeの書き出し方法を調査中です。
+
+# 実行環境制約
+
+SceneCaptureActorが使用している、ConstructTexture2D APIの実装に、#if WITH_EDITORが含まれているため、-gameでは動作しません。
 
 #依存ライブラリ
 
