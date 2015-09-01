@@ -30,9 +30,14 @@ Unreal Engine 4のMatineではLDR動画しか書き出せませんが、SceneCap
 
 ## キューブマップの書き出し
 
-SceneCapture2Dと同様に、SceneCaptureCubeを配置して、SceneRenderTargetCubeをrender_tex_cubeにアタッチして下さい。
-path_cubeに書き出し先のパスを設定して下さい。
-CubeMapの仕様は以下のUnreal Engineの仕様に従います。
+SceneCapture2Dと同様の手順でキューブマップを書き出すことができます。
+
+1. 全てのクラス -> SceneCaptureCubeを配置
+2. 新規追加 -> マテリアル -> キューブの描画ターゲット(SceneRenderTargetCube)を追加
+3. SceneRenderTargetCubeをrender_tex_cubeにアタッチ
+4. path_cubeに書き出し先のパスを設定
+
+キューブマップの仕様は以下のUnreal Engineの仕様に従います。
 
 https://docs.unrealengine.com/latest/JPN/Engine/Content/Types/Textures/Cubemaps/CreatingCubemaps/index.html
 
@@ -71,10 +76,10 @@ Unreal Engineは、BENCHMARKオプションを付けて実行することで、�
 ```
 
 BENCHMARKオプションの詳細は以下にあります。
+https://docs.unrealengine.com/latest/INT/Programming/Basics/CommandLineArguments/index.html
 
 ```
 "BENCHMARK: Run game at fixed-step in order to process each frame without skipping any frames. This is useful in conjunction with DUMPMOVIE options."
-https://docs.unrealengine.com/latest/INT/Programming/Basics/CommandLineArguments/index.html
 ```
 
 また、フレームレートの固定は、C++ファイルのBeginPlayで以下のように記述しても行うことができます。
