@@ -68,21 +68,21 @@ Unreal Engineは、BENCHMARKオプションを付けて実行することで、�
 
 ```
 "UE4Editor.exe" "(.uprojectのフルパス)" -ResX=1920 -ResY=1080 -FPS=60 -BENCHMARK
-``
+```
 
 BENCHMARKオプションの詳細は以下にあります。
 
 ```
 "BENCHMARK: Run game at fixed-step in order to process each frame without skipping any frames. This is useful in conjunction with DUMPMOVIE options."
 https://docs.unrealengine.com/latest/INT/Programming/Basics/CommandLineArguments/index.html
-``
+```
 
 また、フレームレートの固定は、C++ファイルのBeginPlayで以下のように記述しても行うことができます。
 
 ```c
 FApp::SetBenchmarking(true);
 FApp::SetFixedDeltaTime(1/60);
-``
+```
 
 ## フルHDでの書き出し
 
