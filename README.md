@@ -49,18 +49,16 @@ https://docs.unrealengine.com/latest/JPN/Engine/Content/Types/Textures/Cubemaps/
 
 1. 新規追加 -> マテリアル -> マテリアル(SceneDepth)を追加
 2. SceneDepthをダブルクリック、Material DomainをPost Processに設定、SceneDepth UVsを適当な定数で割ってエミッシブカラーに接続
-
-![SceneDepth setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SceneDepthMaterial.png)
-
 3. Scene Capture 2DのMiscのBlendablesにSceneDepthを設定
 4. Scene Capture 2DのCapture SourceをFinal Color (LDR with Post Process)に設定
+
+![SceneDepth setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SceneDepthMaterial.png)
 
 ![PostProcess Depth setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SetDepthPostEffect.png)
 
 ## 法線の書き出し
 
 法線を書き出したい場合も、深度値と同様に、Post Process Materialを使用します。
-
 Material EditorでSceneTexture:World Normalをエミッシブカラーに接続して下さい。
 
 ![PostProcess Normal setting](https://github.com/abars/SceneCaptureActor/blob/master/setting/SetNormalPostEffect.png)
